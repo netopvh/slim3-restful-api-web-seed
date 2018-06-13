@@ -499,7 +499,6 @@ php vendor/bin/phinx seed:create ArticleSeeder
 * [Slim Framework](https://www.slimframework.com)
 * [Slim Framework Twig View](https://github.com/slimphp/Twig-View)
 * [Illuminate Database](https://github.com/illuminate/database)
-* [Config](https://github.com/hassankhan/config)
 * [Phinx Migrations](https://book.cakephp.org/3.0/en/phinx.html)
 * [Phinx - Writing Migrations](http://docs.phinx.org/en/latest/migrations.html)
 * [Phinx - Commands](http://docs.phinx.org/en/latest/commands.html)
