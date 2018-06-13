@@ -1,0 +1,41 @@
+{
+    "name": "andrewdyer/slim3-restful-api-web-seed",
+    "description": "A basic starter structure which can be used to develop RESTful APIs and web applications, built with the Slim 3 framework.",
+    "keywords": ["rest-api", "php", "php7", "slim", "slim-3", "slim-framework", "eloquent", "symfony-console", "phinx"],
+    "homepage": "https://github.com/andrewdyer/slim3-restful-api-web-seed",
+    "authors": [
+        {
+            "name": "Andrew Dyer",
+            "email": "andrewdyer@outlook.com",
+            "homepage": "http://andrewdyer.rocks",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=7.1.14",
+        "slim/slim": "^3.10",
+        "slim/twig-view": "^2.2",
+        "illuminate/database": "^5.6",
+        "robmorgan/phinx": "^0.9.2",
+        "monolog/monolog": "^1.23",
+        "symfony/console": "^4.0",
+        "symfony/dotenv": "^4.0",
+        "tuupola/cors-middleware": "^0.7.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^3.2",
+        "phpunit/phpunit": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
+    }
+}
