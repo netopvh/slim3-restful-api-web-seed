@@ -172,10 +172,7 @@ use App\Models\AbstractModel;
 class Article extends AbstractModel
 {
     
-    /**
-     *
-     * @var string 
-     */
+    /** @var string */
     protected $table = "articles";
     
 }
