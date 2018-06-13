@@ -4,7 +4,7 @@ $container = $app->getContainer();
 
 // Cross-Origin Resource Sharing
 // -----------------------------------------------------------------------------
-$app->add("corsMiddleware");
+$app->add($container->get("corsMiddleware"));
 
 // 
 // -----------------------------------------------------------------------------
