@@ -486,6 +486,42 @@ php vendor/bin/phinx rollback --dry-run
 Seed classes are a great way to easily fill your database with data after it’s created. 
 By default they are stored in `app/Seeds`.
 
+```php
+use App\Models\Article;
+use Phinx\Seed\AbstractSeed;
+    
+class ArticleSeeder extends AbstractSeed
+{
+    
+    /**
+     * Run Method.
+     *
+     * Write your database seeder using this method.
+     *
+     * More information on writing seeders is available here:
+     * http://docs.phinx.org/en/latest/seeding.html
+     */
+    public function run()
+    {
+        Article::insert([
+            [
+                "title" => "Article #1",
+                "content" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eros nibh, fringilla pharetra scelerisque sed, rhoncus eget neque. Nunc sodales, eros sit amet fermentum interdum."
+            ],
+            [
+                "title" => "Article #2",
+                "content" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque condimentum, justo eget suscipit euismod, nisi velit luctus mauris, non posuere orci ex sit amet lorem."
+            ],
+            [
+                "title" => "Article #3",
+                "content" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris arcu leo, molestie at congue nec, vestibulum aliquet sapien. Orci varius natoque penatibus et magnis dis."
+            ],
+        ]);
+    }
+    
+}
+```
+
 Phinx includes a command to easily generate a new seed class:
 
 ```
