@@ -5,20 +5,20 @@ namespace App\Traits;
 use Interop\Container\ContainerInterface as Container;
 
 /**
- * Trait ContainerAwareTrait
- * 
+ * Trait ContainerAwareTrait.
+ *
  * @author Andrew Dyer <andrewdyer@outlook.com>
+ *
  * @category Trait
+ *
  * @see https://github.com/andrewdyer/slim3-restful-api-web-seed
  */
 trait ContainerAwareTrait
 {
-
     /** @var ContainerInterface */
     private $_container;
 
     /**
-     * 
      * @return Interop\Container\ContainerInterface
      */
     protected function getContainer()
@@ -27,17 +27,16 @@ trait ContainerAwareTrait
     }
 
     /**
-     * 
      * @return Monolog\Logger
      */
     protected function getLogger()
     {
-        return $this->_container->get("logger");
+        return $this->_container->get('logger');
     }
 
     /**
-     * 
      * @param ContainerInterface $container
+     *
      * @return $this
      */
     public function setContainer(Container $container)
@@ -46,5 +45,4 @@ trait ContainerAwareTrait
 
         return $this;
     }
-
 }

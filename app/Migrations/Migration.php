@@ -6,36 +6,31 @@ use Phinx\Migration\AbstractMigration;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 /**
- * Class Migration
- * 
+ * Class Migration.
+ *
  * @author Andrew Dyer <andrewdyer@outlook.com>
+ *
  * @category Migration
+ *
  * @see https://github.com/andrewdyer/slim3-restful-api-web-seed
  *  */
 class Migration extends AbstractMigration
 {
-
     /**
-     *
      * @var Schema
      */
     private $_schema;
 
-    /**
-     * @return void
-     */
     public function init()
     {
-        $this->_schema = (new Capsule)->schema();
+        $this->_schema = (new Capsule())->schema();
     }
 
     /**
-     * 
      * @return Schema
      */
     public function schema()
     {
         return $this->_schema;
     }
-
 }

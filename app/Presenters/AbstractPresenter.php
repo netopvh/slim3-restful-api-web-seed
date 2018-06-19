@@ -5,23 +5,22 @@ namespace App\Presenters;
 use App\Interfaces\PresenterInterface;
 
 /**
- * Class AbstractPresenter
- * 
+ * Class AbstractPresenter.
+ *
  * @author Andrew Dyer <andrewdyer@outlook.com>
+ *
  * @category Presenter
+ *
  * @see https://github.com/andrewdyer/slim3-restful-api-web-seed
  */
 abstract class AbstractPresenter implements PresenterInterface
 {
-
     /**
-     *
-     * @var object 
+     * @var object
      */
     private $_data;
 
     /**
-     * 
      * @param mixed $data
      */
     public function __construct($data)
@@ -30,12 +29,10 @@ abstract class AbstractPresenter implements PresenterInterface
     }
 
     /**
-     * 
      * @return array
      */
     public function present()
     {
         return $this->format($this->_data);
     }
-
 }
