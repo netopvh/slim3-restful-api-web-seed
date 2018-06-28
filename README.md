@@ -68,7 +68,6 @@ Here's a basic usage example of a controller:
 namespace App\Controllers;
     
 use App\Models\Article;
-use App\Controllers\AbstractController;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
     
@@ -165,8 +164,6 @@ Here's a basic usage example of a model:
 ```php
 namespace App\Models;
     
-use App\Models\AbstractModel;
-    
 class Article extends AbstractModel
 {
     /** @var string */
@@ -190,8 +187,6 @@ Here's a basic usage example of a presenter:
 
 ```php
 namespace App\Presenters;
-    
-use App\Presenters\AbstractPresenter;
     
 class ArticlePresenter extends AbstractPresenter
 {
@@ -221,7 +216,6 @@ a new instance of the presenter - calling the `->present()` method on it:
 namespace App\Controllers;
     
 use App\Models\Article;
-use App\Controllers\AbstractController;
 use App\Presenters\ArticlePresenter;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
@@ -257,7 +251,6 @@ Here's a basic usage example of middleware:
 ```php
 namespace App\Middleware;
     
-use App\Middleware\AbstractMiddleware;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
     
@@ -303,7 +296,6 @@ Here's a basic usage example of a command:
 ```php
 namespace App\Commands;
     
-use App\Commands\AbstractCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
