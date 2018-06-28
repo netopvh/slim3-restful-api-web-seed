@@ -82,7 +82,7 @@ class ArticlesController extends AbstractController
      */
     public function getAction(Request $request, Response $response)
     {
-        return $this->renderView($response, "articles/create.html.twig");
+        return $this->renderView($response, 'articles/create.html.twig');
     }
     
     /**
@@ -94,11 +94,11 @@ class ArticlesController extends AbstractController
     public function postAction(Request $request, Response $response)
     {
         $article = new Article;
-        $article->title = $request->getParam("input");
-        $article->content = $request->getParam("content");
+        $article->title = $request->getParam('input');
+        $article->content = $request->getParam('content');
         $article->save();
 
-        return $response->withRedirect($this->getPathFor("articles.create"));
+        return $response->withRedirect($this->getPathFor('articles.create'));
     }
 }
 ```
@@ -138,8 +138,8 @@ Don't forget to define your routes, passing the controller class name and method
 **routes/web.php**
 
 ```php
-$app->get("/articles", App\Controllers\ArticlesController::class . ":getAction")->setName("articles.create");
-$app->post("/articles", App\Controllers\ArticlesController::class . ":postAction")->setName("articles.create");
+$app->get('/articles', App\Controllers\ArticlesController::class . ':getAction')->setName('articles.create');
+$app->post('/articles', App\Controllers\ArticlesController::class . ':postAction')->setName('articles.create');
 ```
 
 In summary, the above example will see all GET requests made to the */articles* 
@@ -170,7 +170,7 @@ use App\Models\AbstractModel;
 class Article extends AbstractModel
 {
     /** @var string */
-    protected $table = "articles";
+    protected $table = 'articles';
 }
 ```
 
@@ -203,10 +203,10 @@ class ArticlePresenter extends AbstractPresenter
     public function format($data): array
     {
         return [
-            "id" => $data->id,
-            "title" => $data->title,
-            "excerpt" => substr($data->content, 0, 145),
-            "content" => $data->content
+            'id' => $data->id,
+            'title' => $data->title,
+            'excerpt' => substr($data->content, 0, 145),
+            'content' => $data->content
         ];
     }
 }
@@ -317,7 +317,7 @@ class SayHelloCommand extends AbstractCommand
     public function arguments(): array
     {
         return [
-            ["name", InputArgument::OPTIONAL, "Your name"],
+            ['name', InputArgument::OPTIONAL, 'Your name'],
         ];
     }
     
@@ -326,7 +326,7 @@ class SayHelloCommand extends AbstractCommand
      */
     public function description(): string
     {
-        return "";
+        return '';
     }
     
     /**
@@ -337,8 +337,8 @@ class SayHelloCommand extends AbstractCommand
      */
     public function handle(InputInterface $input, OutputInterface $output)
     {
-        for ($i = 0; $i < $input->getOption("repeat"); $i ++) {
-            $output->writeln("<comment>" . "Hello " . $input->getArgument("name") . "</comment>");
+        for ($i = 0; $i < $input->getOption('repeat'); $i ++) {
+            $output->writeln('<comment>' . 'Hello ' . $input->getArgument('name') . '</comment>');
         }
     }
     
@@ -347,7 +347,7 @@ class SayHelloCommand extends AbstractCommand
      */
     public function help(): string
     {
-        return "";
+        return '';
     }
     
     /**
@@ -355,7 +355,7 @@ class SayHelloCommand extends AbstractCommand
      */
     public function name(): string
     {
-        return "say:hello";
+        return 'say:hello';
     }
     
     /**
@@ -364,7 +364,7 @@ class SayHelloCommand extends AbstractCommand
     public function options(): array
     {
         return [
-            ["repeat", "r", InputOption::VALUE_OPTIONAL, "Times to repeat output", 1]
+            ['repeat', 'r', InputOption::VALUE_OPTIONAL, 'Times to repeat output', 1]
         ];
     }
 }
@@ -487,16 +487,16 @@ class ArticleSeeder extends AbstractSeed
     {
         Article::insert([
             [
-                "title" => "Article #1",
-                "content" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eros nibh, fringilla pharetra scelerisque sed, rhoncus eget neque. Nunc sodales, eros sit amet fermentum interdum."
+                'title' => 'Article #1',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eros nibh, fringilla pharetra scelerisque sed, rhoncus eget neque. Nunc sodales, eros sit amet fermentum interdum.'
             ],
             [
-                "title" => "Article #2",
-                "content" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque condimentum, justo eget suscipit euismod, nisi velit luctus mauris, non posuere orci ex sit amet lorem."
+                'title' => 'Article #2',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque condimentum, justo eget suscipit euismod, nisi velit luctus mauris, non posuere orci ex sit amet lorem.'
             ],
             [
-                "title" => "Article #3",
-                "content" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris arcu leo, molestie at congue nec, vestibulum aliquet sapien. Orci varius natoque penatibus et magnis dis."
+                'title' => 'Article #3',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris arcu leo, molestie at congue nec, vestibulum aliquet sapien. Orci varius natoque penatibus et magnis dis.'
             ],
         ]);
     }
