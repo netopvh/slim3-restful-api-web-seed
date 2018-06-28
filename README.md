@@ -148,6 +148,8 @@ a POST request will be made to the same endpoint, which is handled by the `postA
 of the ArticlesController class. This method will create a new model and redirect 
 the user back the same page.
 
+[[Back to Top]](#documentation)
+
 ### Models
 
 This project makes use of Eloquent ORM, a simple ActiveRecord implementation for 
@@ -170,6 +172,8 @@ class Article extends AbstractModel
     protected $table = 'articles';
 }
 ```
+
+[[Back to Top]](#documentation)
 
 ### Presenters
 
@@ -237,6 +241,8 @@ class ArticlesController extends AbstractController
 }
 ```
 
+[[Back to Top]](#documentation)
+
 ### Middleware
 
 Middleware is code that is run before and after your application to manipulate the 
@@ -283,6 +289,8 @@ or against specific routes in *routes/* directory.
 $container = $app->getContainer();
 $app->add(new App\Middleware\ExampleMiddleware($container));
 ```
+
+[[Back to Top]](#documentation)
 
 ### Commands
 
@@ -370,6 +378,8 @@ Commands are registered by using the `->add();` function chain in **bootstrap/co
 $container = $app->getContainer();
 $console->add(new App\Commands\SayHelloCommand($container));
 ```
+
+[[Back to Top]](#documentation)
 
 ### Migrations
 
@@ -500,6 +510,8 @@ Phinx includes a command to easily generate a new seed class:
 ```
 php bin/phinx seed:create ArticleSeeder
 ```
+
+[[Back to Top]](#documentation)
 
 ## Useful Links
 * [Slim Framework](https://www.slimframework.com)
