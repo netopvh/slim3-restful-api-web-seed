@@ -6,7 +6,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 
 /**
- * Class DefaultController.
+ * Class ApiController.
  *
  * @author Andrew Dyer <andrewdyer@outlook.com>
  *

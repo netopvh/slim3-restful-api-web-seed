@@ -74,11 +74,10 @@ use Psr\Http\Message\ResponseInterface as Response;
     
 class ArticlesController extends AbstractController
 {  
-    
     /**
-     * 
      * @param Request $request
      * @param Response $response
+     * 
      * @return Response
      */
     public function getAction(Request $request, Response $response)
@@ -87,9 +86,9 @@ class ArticlesController extends AbstractController
     }
     
     /**
-     * 
      * @param Request $request
      * @param Response $response
+     * 
      * @return Response
      */
     public function postAction(Request $request, Response $response)
@@ -101,7 +100,6 @@ class ArticlesController extends AbstractController
 
         return $response->withRedirect($this->getPathFor("articles.create"));
     }
-    
 }
 ```
 
@@ -171,10 +169,8 @@ use App\Models\AbstractModel;
     
 class Article extends AbstractModel
 {
-    
     /** @var string */
     protected $table = "articles";
-    
 }
 ```
 
@@ -199,10 +195,9 @@ use App\Presenters\AbstractPresenter;
     
 class ArticlePresenter extends AbstractPresenter
 {
-    
     /**
-     * 
      * @param object $data
+     *
      * @return array
      */
     public function format($data): array
@@ -214,7 +209,6 @@ class ArticlePresenter extends AbstractPresenter
             "content" => $data->content
         ];
     }
-    
 }
 ```
 
@@ -234,11 +228,10 @@ use Psr\Http\Message\ResponseInterface as Response;
     
 class ArticlesController extends AbstractController
 {
-    
     /**
-     * 
      * @param Request $request
      * @param Response $response
+     *
      * @return Response
      */
     public function getAction(Request $request, Response $response)
@@ -247,7 +240,6 @@ class ArticlesController extends AbstractController
         
         return $response->withJson((new ArticlePresenter($article))->present());
     }
-    
 }
 ```
 
@@ -271,12 +263,11 @@ use Psr\Http\Message\ResponseInterface as Response;
     
 class ExampleMiddleware extends AbstractMiddleware
 {
-    
     /**
-     * 
      * @param Request $request
      * @param Response $response
      * @param callable $next
+     * 
      * @return Response
      */
     public function handle(Request $request, Response $response, callable $next): Response
@@ -287,7 +278,6 @@ class ExampleMiddleware extends AbstractMiddleware
 
         return $response;
     }
-    
 }
 ```
 
@@ -321,9 +311,7 @@ use Symfony\Component\Console\Output\OutputInterface;
     
 class SayHelloCommand extends AbstractCommand
 {
-    
     /**
-     * 
      * @return array
      */
     public function arguments(): array
@@ -334,7 +322,6 @@ class SayHelloCommand extends AbstractCommand
     }
     
     /**
-     * 
      * @return string
      */
     public function description(): string
@@ -343,9 +330,9 @@ class SayHelloCommand extends AbstractCommand
     }
     
     /**
-     * 
      * @param InputInterface $input
      * @param OutputInterface $output
+     * 
      * @return mixed
      */
     public function handle(InputInterface $input, OutputInterface $output)
@@ -356,7 +343,6 @@ class SayHelloCommand extends AbstractCommand
     }
     
     /**
-     * 
      * @return string
      */
     public function help(): string
@@ -365,7 +351,6 @@ class SayHelloCommand extends AbstractCommand
     }
     
     /**
-     * 
      * @return string
      */
     public function name(): string
@@ -374,7 +359,6 @@ class SayHelloCommand extends AbstractCommand
     }
     
     /**
-     * 
      * @return array
      */
     public function options(): array
@@ -383,7 +367,6 @@ class SayHelloCommand extends AbstractCommand
             ["repeat", "r", InputOption::VALUE_OPTIONAL, "Times to repeat output", 1]
         ];
     }
-    
 }
 ```
 
@@ -492,7 +475,6 @@ use Phinx\Seed\AbstractSeed;
     
 class ArticleSeeder extends AbstractSeed
 {
-    
     /**
      * Run Method.
      *
@@ -518,7 +500,6 @@ class ArticleSeeder extends AbstractSeed
             ],
         ]);
     }
-    
 }
 ```
 
