@@ -412,7 +412,7 @@ requires one argument: the name of the migration. The migration name should be s
 CamelCase format. 
 
 ```
-php vendor/bin/phinx create MyNewMigration
+php bin/phinx create MyNewMigration
 ```
 
 #### Migrate Command
@@ -420,19 +420,19 @@ php vendor/bin/phinx create MyNewMigration
 The migrate command runs all of the available migrations, optionally up to a specific version.
 
 ```
-php vendor/bin/phinx migrate
+php bin/phinx migrate
 ```
 
 To migrate to a specific version then use the `--target` parameter or `-t` for short.
 
 ```
-php vendor/bin/phinx  migrate -e development -t 20110103081132
+php bin/phinx  migrate -e development -t 20110103081132
 ```
 
 Use `--dry-run` to print the queries to standard output without executing them
 
 ```
-php vendor/bin/phinx  migrate --dry-run
+php bin/phinx  migrate --dry-run
 ```
 
 #### Rollback Command
@@ -442,43 +442,43 @@ the opposite of the migrate command. You can rollback to the previous migration 
 using the rollback command with no arguments.
 
 ```
-php vendor/bin/phinx rollback -e development
+php bin/phinx rollback -e development
 ```
 
 To rollback all migrations to a specific version then use the `--target` parameter or `-t` for short.
 
 ```
-php vendor/bin/phinx rollback -e development -t 20120103083322
+php bin/phinx rollback -e development -t 20120103083322
 ```
 
 Specifying 0 as the target version will revert all migrations.
 
 ```
-php vendor/bin/phinx rollback -e development -t 0
+php bin/phinx rollback -e development -t 0
 ```
 
 To rollback all migrations to a specific date then use the `--date parameter` or `-d` for short.
 
 ```
-php vendor/bin/phinx rollback -e development -d 2012
-php vendor/bin/phinx rollback -e development -d 201201
-php vendor/bin/phinx rollback -e development -d 20120103
-php vendor/bin/phinx rollback -e development -d 2012010312
-php vendor/bin/phinx rollback -e development -d 201201031205
-php vendor/bin/phinx rollback -e development -d 20120103120530
+php bin/phinx rollback -e development -d 2012
+php bin/phinx rollback -e development -d 201201
+php bin/phinx rollback -e development -d 20120103
+php bin/phinx rollback -e development -d 2012010312
+php bin/phinx rollback -e development -d 201201031205
+php bin/phinx rollback -e development -d 20120103120530
 ```
 
 If a breakpoint is set, blocking further rollbacks, you can override the breakpoint 
 using the `--force parameter` or `-f` for short.
 
 ```
-php vendor/bin/phinx rollback -e development -t 0 -f
+php bin/phinx rollback -e development -t 0 -f
 ```
 
 Use `--dry-run` to print the queries to standard output without executing them
 
 ```
-php vendor/bin/phinx rollback --dry-run
+php bin/phinx rollback --dry-run
 ```
 
 #### Seeding
@@ -525,7 +525,7 @@ class ArticleSeeder extends AbstractSeed
 Phinx includes a command to easily generate a new seed class:
 
 ```
-php vendor/bin/phinx seed:create ArticleSeeder
+php bin/phinx seed:create ArticleSeeder
 ```
 
 ## Useful Links
