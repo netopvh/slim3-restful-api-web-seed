@@ -75,9 +75,9 @@ use Psr\Http\Message\ResponseInterface as Response;
 class ArticlesController extends AbstractController
 {  
     /**
-     * @param Request $request
+     * @param Request  $request
      * @param Response $response
-     * 
+     *
      * @return Response
      */
     public function getAction(Request $request, Response $response)
@@ -86,9 +86,9 @@ class ArticlesController extends AbstractController
     }
     
     /**
-     * @param Request $request
+     * @param Request  $request
      * @param Response $response
-     * 
+     *
      * @return Response
      */
     public function postAction(Request $request, Response $response)
@@ -229,7 +229,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 class ArticlesController extends AbstractController
 {
     /**
-     * @param Request $request
+     * @param Request  $request
      * @param Response $response
      *
      * @return Response
@@ -264,7 +264,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 class ExampleMiddleware extends AbstractMiddleware
 {
     /**
-     * @param Request $request
+     * @param Request  $request
      * @param Response $response
      * @param callable $next
      * 
@@ -330,7 +330,7 @@ class SayHelloCommand extends AbstractCommand
     }
     
     /**
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
      * 
      * @return mixed
