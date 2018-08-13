@@ -45,7 +45,7 @@ $container['logger'] = function ($container) {
 // View
 // -----------------------------------------------------------------------------
 $container['view'] = function ($container) {
-    $twig = new \Slim\Views\Twig(__DIR__.'/../resources/views', []);
+    $twig = new \Slim\Views\Twig(__DIR__.'/../views', []);
     $basePath = rtrim(str_ireplace('index.php', '', $container->get('request')->getUri()->getBasePath()), '/');
     $twig->addExtension(new \Slim\Views\TwigExtension($container->get('router'), $basePath));
 

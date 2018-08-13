@@ -2,25 +2,25 @@
 
 namespace App\Middleware;
 
-use App\Middleware\AbstractMiddleware;
-use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
 
 /**
- * Class Middleware
- * 
+ * Class Middleware.
+ *
  * @author John Doe <john.doe@example.com>
+ *
  * @category Middleware
+ *
  * @see https://example.com
  */
 class Middleware extends AbstractMiddleware
 {
-
     /**
-     * 
-     * @param Request $request
+     * @param Request  $request
      * @param Response $response
      * @param callable $next
+     *
      * @return Response
      */
     public function handle(Request $request, Response $response, callable $next): Response
@@ -28,8 +28,7 @@ class Middleware extends AbstractMiddleware
         $response = $next($request, $response);
 
         // ...
-        
+
         return $response;
     }
-
 }

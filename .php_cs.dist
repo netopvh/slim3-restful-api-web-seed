@@ -10,6 +10,6 @@ return PhpCsFixer\Config::create()
     ->setFinder(PhpCsFixer\Finder::create()
         ->in(__DIR__)
         ->exclude('public')
-        ->exclude('resource')
+        ->exclude('views')
         ->exclude('var')
     );

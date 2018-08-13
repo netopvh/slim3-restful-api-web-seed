@@ -2,19 +2,17 @@
 
 namespace App\Models;
 
-use App\Models\AbstractModel;
-
 /**
- * Class Model
- * 
+ * Class Model.
+ *
  * @author John Doe <john.doe@example.com>
+ *
  * @category Model
+ *
  * @see https://example.com
  */
 class Model extends AbstractModel
 {
-
     /** @var string */
-    protected $table = "";
-
+    protected $table = '';
 }

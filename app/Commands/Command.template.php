@@ -2,22 +2,21 @@
 
 namespace App\Commands;
 
-use App\Commands\AbstractCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Class Command
- * 
+ * Class Command.
+ *
  * @author John Doe <john.doe@example.com>
+ *
  * @category Command
+ *
  * @see https://example.com
  */
 class Command extends AbstractCommand
 {
-
     /**
-     * 
      * @return array
      */
     public function arguments(): array
@@ -26,17 +25,15 @@ class Command extends AbstractCommand
     }
 
     /**
-     * 
      * @return string
      */
     public function description(): string
     {
-        return "";
+        return '';
     }
 
     /**
-     * 
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
      */
     public function handle(InputInterface $input, OutputInterface $output)
@@ -45,30 +42,26 @@ class Command extends AbstractCommand
     }
 
     /**
-     * 
      * @return string
      */
     public function help(): string
     {
-        return "";
+        return '';
     }
 
     /**
-     * 
      * @return string
      */
     public function name(): string
     {
-        return "";
+        return '';
     }
 
     /**
-     * 
      * @return array
      */
     public function options(): array
     {
         return [];
     }
-
 }
