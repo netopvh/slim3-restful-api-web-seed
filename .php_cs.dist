@@ -1,0 +1,15 @@
+<?php
+
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@Symfony' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'linebreak_after_opening_tag' => true,
+        'ordered_imports' => true,
+    ])
+    ->setFinder(PhpCsFixer\Finder::create()
+        ->in(__DIR__)
+        ->exclude('public')
+        ->exclude('resource')
+        ->exclude('var')
+    );
