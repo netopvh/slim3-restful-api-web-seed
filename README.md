@@ -66,13 +66,13 @@ Here's a basic usage example of a controller:
 
 ```php
 namespace App\Controllers;
-    
+
 use App\Models\Article;
-use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-    
+use Psr\Http\Message\ServerRequestInterface as Request;
+
 class ArticlesController extends AbstractController
-{  
+{
     /**
      * @param Request  $request
      * @param Response $response
@@ -83,7 +83,7 @@ class ArticlesController extends AbstractController
     {
         return $this->renderView($response, 'articles/create.html.twig');
     }
-    
+
     /**
      * @param Request  $request
      * @param Response $response
@@ -92,7 +92,7 @@ class ArticlesController extends AbstractController
      */
     public function postAction(Request $request, Response $response)
     {
-        $article = new Article;
+        $article = new Article();
         $article->title = $request->getParam('input');
         $article->content = $request->getParam('content');
         $article->save();
@@ -137,8 +137,8 @@ Don't forget to define your routes, passing the controller class name and method
 **routes/web.php**
 
 ```php
-$app->get('/articles', App\Controllers\ArticlesController::class . ':getAction')->setName('articles.create');
-$app->post('/articles', App\Controllers\ArticlesController::class . ':postAction')->setName('articles.create');
+$app->get('/articles', App\Controllers\ArticlesController::class.':getAction')->setName('articles.create');
+$app->post('/articles', App\Controllers\ArticlesController::class.':postAction')->setName('articles.create');
 ```
 
 In summary, the above example will see all GET requests made to the */articles* 
@@ -165,7 +165,7 @@ Here's a basic usage example of a model:
 
 ```php
 namespace App\Models;
-    
+
 class Article extends AbstractModel
 {
     /** @var string */
@@ -191,7 +191,7 @@ Here's a basic usage example of a presenter:
 
 ```php
 namespace App\Presenters;
-    
+
 class ArticlePresenter extends AbstractPresenter
 {
     /**
@@ -205,7 +205,7 @@ class ArticlePresenter extends AbstractPresenter
             'id' => $data->id,
             'title' => $data->title,
             'excerpt' => substr($data->content, 0, 145),
-            'content' => $data->content
+            'content' => $data->content,
         ];
     }
 }
@@ -218,12 +218,12 @@ a new instance of the presenter - calling the `->present()` method on it:
 
 ```php
 namespace App\Controllers;
-    
+
 use App\Models\Article;
 use App\Presenters\ArticlePresenter;
-use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-    
+use Psr\Http\Message\ServerRequestInterface as Request;
+
 class ArticlesController extends AbstractController
 {
     /**
@@ -235,7 +235,7 @@ class ArticlesController extends AbstractController
     public function getAction(Request $request, Response $response)
     {
         $article = Article::find(1);
-        
+
         return $response->withJson((new ArticlePresenter($article))->present());
     }
 }
@@ -256,17 +256,17 @@ Here's a basic usage example of middleware:
 
 ```php
 namespace App\Middleware;
-    
-use Psr\Http\Message\ServerRequestInterface as Request;
+
 use Psr\Http\Message\ResponseInterface as Response;
-    
+use Psr\Http\Message\ServerRequestInterface as Request;
+
 class ExampleMiddleware extends AbstractMiddleware
 {
     /**
      * @param Request  $request
      * @param Response $response
      * @param callable $next
-     * 
+     *
      * @return Response
      */
     public function handle(Request $request, Response $response, callable $next): Response
@@ -303,12 +303,12 @@ Here's a basic usage example of a command:
 
 ```php
 namespace App\Commands;
-    
+
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-    
+
 class SayHelloCommand extends AbstractCommand
 {
     /**
@@ -320,7 +320,7 @@ class SayHelloCommand extends AbstractCommand
             ['name', InputArgument::OPTIONAL, 'Your name'],
         ];
     }
-    
+
     /**
      * @return string
      */
@@ -328,20 +328,20 @@ class SayHelloCommand extends AbstractCommand
     {
         return '';
     }
-    
+
     /**
      * @param InputInterface  $input
      * @param OutputInterface $output
-     * 
+     *
      * @return mixed
      */
     public function handle(InputInterface $input, OutputInterface $output)
     {
-        for ($i = 0; $i < $input->getOption('repeat'); $i ++) {
-            $output->writeln('<comment>' . 'Hello ' . $input->getArgument('name') . '</comment>');
+        for ($i = 0; $i < $input->getOption('repeat'); ++$i ) {
+            $output->writeln('<comment>'.'Hello '.$input->getArgument('name').'</comment>');
         }
     }
-    
+
     /**
      * @return string
      */
@@ -349,7 +349,7 @@ class SayHelloCommand extends AbstractCommand
     {
         return '';
     }
-    
+
     /**
      * @return string
      */
@@ -357,14 +357,14 @@ class SayHelloCommand extends AbstractCommand
     {
         return 'say:hello';
     }
-    
+
     /**
      * @return array
      */
     public function options(): array
     {
         return [
-            ['repeat', 'r', InputOption::VALUE_OPTIONAL, 'Times to repeat output', 1]
+            ['repeat', 'r', InputOption::VALUE_OPTIONAL, 'Times to repeat output', 1],
         ];
     }
 }
@@ -474,7 +474,7 @@ By default they are stored in `app/Seeds`.
 ```php
 use App\Models\Article;
 use Phinx\Seed\AbstractSeed;
-    
+
 class ArticleSeeder extends AbstractSeed
 {
     /**
@@ -490,15 +490,15 @@ class ArticleSeeder extends AbstractSeed
         Article::insert([
             [
                 'title' => 'Article #1',
-                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eros nibh, fringilla pharetra scelerisque sed, rhoncus eget neque. Nunc sodales, eros sit amet fermentum interdum.'
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eros nibh, fringilla pharetra scelerisque sed, rhoncus eget neque. Nunc sodales, eros sit amet fermentum interdum.',
             ],
             [
                 'title' => 'Article #2',
-                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque condimentum, justo eget suscipit euismod, nisi velit luctus mauris, non posuere orci ex sit amet lorem.'
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque condimentum, justo eget suscipit euismod, nisi velit luctus mauris, non posuere orci ex sit amet lorem.',
             ],
             [
                 'title' => 'Article #3',
-                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris arcu leo, molestie at congue nec, vestibulum aliquet sapien. Orci varius natoque penatibus et magnis dis.'
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris arcu leo, molestie at congue nec, vestibulum aliquet sapien. Orci varius natoque penatibus et magnis dis.',
             ],
         ]);
     }
