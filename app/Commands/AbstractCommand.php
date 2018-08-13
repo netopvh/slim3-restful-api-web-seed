@@ -3,8 +3,8 @@
 namespace App\Commands;
 
 use App\Interfaces\CommandInterface;
-use App\Traits\ContainerAwareTrait;
 use App\Interfaces\ContainerAwareInterface;
+use App\Traits\ContainerAwareTrait;
 use Interop\Container\ContainerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

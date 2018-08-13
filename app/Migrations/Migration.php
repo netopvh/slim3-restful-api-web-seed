@@ -2,8 +2,8 @@
 
 namespace App\Migrations;
 
-use Phinx\Migration\AbstractMigration;
 use Illuminate\Database\Capsule\Manager as Capsule;
+use Phinx\Migration\AbstractMigration;
 
 /**
  * Class Migration.
