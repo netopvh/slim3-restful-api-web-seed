@@ -170,6 +170,14 @@ class Article extends AbstractModel
 {
     /** @var string */
     protected $table = 'articles';
+
+    /**
+     * @return string
+     */
+    public function getExcerptAttribute()
+    {
+        return substr($data->content, 0, 145);
+    }
 }
 ```
 
@@ -204,7 +212,7 @@ class ArticlePresenter extends AbstractPresenter
         return [
             'id' => $data->id,
             'title' => $data->title,
-            'excerpt' => substr($data->content, 0, 145),
+            'excerpt' => $data->excerpt,
             'content' => $data->content,
         ];
     }
