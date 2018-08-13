@@ -176,7 +176,7 @@ class Article extends AbstractModel
      */
     public function getExcerptAttribute()
     {
-        return substr($data->content, 0, 145);
+        return substr($this->content, 0, 145);
     }
 }
 ```
