@@ -2,9 +2,11 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/554d9517ccec49278df87e21764ecc58)](https://www.codacy.com/app/andrewdyer/slim3-restful-api-web-seed?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=andrewdyer/slim3-restful-api-web-seed&amp;utm_campaign=Badge_Grade)
 [![Latest Stable Version](https://poser.pugx.org/andrewdyer/slim3-restful-api-web-seed/version)](https://packagist.org/packages/andrewdyer/slim3-restful-api-web-seed)
-[![Total Downloads](https://poser.pugx.org/andrewdyer/slim3-restful-api-web-seed/downloads)](https://packagist.org/packages/andrewdyer/slim3-restful-api-web-seed)
 [![Latest Unstable Version](https://poser.pugx.org/andrewdyer/slim3-restful-api-web-seed/v/unstable)](//packagist.org/packages/andrewdyer/slim3-restful-api-web-seed)
 [![License](https://poser.pugx.org/andrewdyer/slim3-restful-api-web-seed/license)](https://packagist.org/packages/andrewdyer/slim3-restful-api-web-seed)
+[![Total Downloads](https://poser.pugx.org/andrewdyer/slim3-restful-api-web-seed/downloads)](https://packagist.org/packages/andrewdyer/slim3-restful-api-web-seed)
+[![Daily Downloads](https://poser.pugx.org/andrewdyer/slim3-restful-api-web-seed/d/daily)](https://packagist.org/packages/andrewdyer/slim3-restful-api-web-seed)
+[![Monthly Downloads](https://poser.pugx.org/andrewdyer/slim3-restful-api-web-seed/d/monthly)](https://packagist.org/packages/andrewdyer/slim3-restful-api-web-seed)
 [![composer.lock available](https://poser.pugx.org/andrewdyer/slim3-restful-api-web-seed/composerlock)](https://packagist.org/packages/andrewdyer/slim3-restful-api-web-seed)
 
 A basic starter structure which can be used to develop RESTful APIs and web applications, 
