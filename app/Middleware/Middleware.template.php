@@ -7,12 +7,6 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 /**
  * Class Middleware.
- *
- * @author John Doe <john.doe@example.com>
- *
- * @category Middleware
- *
- * @see https://example.com
  */
 class Middleware extends AbstractMiddleware
 {

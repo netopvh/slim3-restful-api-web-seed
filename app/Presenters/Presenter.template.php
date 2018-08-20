@@ -4,12 +4,6 @@ namespace App\Presenters;
 
 /**
  * Class Presenter.
- *
- * @author John Doe <john.doe@example.com>
- *
- * @category Presenter
- *
- * @see https://example.com
  */
 class Presenter extends AbstractPresenter
 {

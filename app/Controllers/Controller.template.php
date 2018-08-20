@@ -7,12 +7,6 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 /**
  * Class Controller.
- *
- * @author John Doe <john.doe@example.com>
- *
- * @category Controller
- *
- * @see https://example.com
  */
 class Controller extends AbstractController
 {

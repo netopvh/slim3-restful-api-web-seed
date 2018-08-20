@@ -5,12 +5,6 @@ use Illuminate\Database\Schema\Blueprint;
 
 /**
  * Class $className.
- *
- * @author John Doe <john.doe@example.com>
- *
- * @category Migration
- *
- * @see https://example.com
  */
 class $className extends $baseClassName
 {

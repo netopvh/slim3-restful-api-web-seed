@@ -7,12 +7,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Class Command.
- *
- * @author John Doe <john.doe@example.com>
- *
- * @category Command
- *
- * @see https://example.com
  */
 class Command extends AbstractCommand
 {
