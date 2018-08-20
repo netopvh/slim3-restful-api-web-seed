@@ -21,6 +21,6 @@ return [
     ],
     'migration_base_class' => "App\Migrations\Migration",
     'templates' => [
-        'file' => 'app/Migrations/Migration.template.php',
+        'file' => 'app/Migrations/Migration.template.php.dist',
     ],
 ];
