@@ -6,7 +6,8 @@ try {
     $dotenv = new \Symfony\Component\Dotenv\Dotenv();
     $dotenv->load(__DIR__.'/../.env');
 } catch (\Symfony\Component\Dotenv\Exception\PathException $ex) {
-    die($ex->getMessage());
+    echo $ex->getMessage();
+    exit(1);
 }
 
 $app = new \Slim\App([
@@ -40,4 +41,4 @@ $app = new \Slim\App([
             'level' => \Monolog\Logger::DEBUG,
         ],
     ],
-]);
+        ]);
