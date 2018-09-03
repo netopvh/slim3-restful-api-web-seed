@@ -4,10 +4,11 @@
 
 use Symfony\Component\Console\Application as Console;
 
-require_once __DIR__ . "/../bootstrap/app.php";
+require_once __DIR__.'/../bootstrap/app.php';
+require_once __DIR__.'/../bootstrap/container.php';
 
 $console = new Console();
 
-require_once __DIR__ . "/../bootstrap/commands.php";
+require_once __DIR__ .'/../bootstrap/commands.php';
 
 $console->run();
