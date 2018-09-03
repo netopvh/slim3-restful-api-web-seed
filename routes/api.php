@@ -1,7 +1,13 @@
 <?php
 
-use App\Controllers\ApiController;
+use App\Controllers\IndexController;
 
+$container = $app->getContainer();
+
+// ###> Api ###
 $app->group('/api', function () {
-    $this->get('', ApiController::class.':getAction')->setName('api');
-});
+    // ###> Index ###
+    $this->get('/index', IndexController::class.':getAction')->setName('api');
+    // ###< Index ###
+})->add($container->get('corsMiddleware'));
+// ###< Api ###

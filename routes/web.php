@@ -1,5 +1,9 @@
 <?php
 
-use App\Controllers\WebController;
+use App\Controllers\IndexController;
 
-$app->get('/', WebController::class.':indexAction')->setName('index');
+$container = $app->getContainer();
+
+// ###> Index ###
+$app->get('/', IndexController::class.':indexView')->setName('index');
+// ###< Index ###
