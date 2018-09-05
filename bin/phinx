@@ -1,0 +1,10 @@
+#!/usr/bin/evn php
+
+<?php
+
+if (!file_exists(dirname(__DIR__).'/vendor/robmorgan/phinx/bin/phinx')) {
+    echo 'Unable to find the `phinx` script in `vendor/robmorgan/phinx/bin/phinx`.';
+    exit(1);
+}
+
+require dirname(__DIR__).'/vendor/robmorgan/phinx/bin/phinx';
