@@ -1,4 +1,4 @@
-# Slim 3 Skeleton
+# Slim3 RESTful API Web Seed
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/554d9517ccec49278df87e21764ecc58)](https://www.codacy.com/app/andrewdyer/slim3-restful-api-web-seed?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=andrewdyer/slim3-restful-api-web-seed&amp;utm_campaign=Badge_Grade)
 [![Latest Stable Version](https://poser.pugx.org/andrewdyer/slim3-restful-api-web-seed/version)](https://packagist.org/packages/andrewdyer/slim3-restful-api-web-seed)
