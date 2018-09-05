@@ -2,7 +2,8 @@
 
 namespace App\Traits;
 
-use Interop\Container\ContainerInterface as Container;
+use Interop\Container\ContainerInterface;
+use Monolog\Logger;
 
 /**
  * Trait ContainerAwareTrait.
@@ -21,15 +22,15 @@ trait ContainerAwareTrait
     /**
      * @return Interop\Container\ContainerInterface
      */
-    protected function getContainer()
+    protected function getContainer(): ContainerInterface
     {
         return $this->_container;
     }
 
     /**
-     * @return Monolog\Logger
+     * @return Logger
      */
-    protected function getLogger()
+    protected function getLogger(): Logger
     {
         return $this->_container->get('logger');
     }
@@ -39,7 +40,7 @@ trait ContainerAwareTrait
      *
      * @return $this
      */
-    public function setContainer(Container $container)
+    public function setContainer(ContainerInterface $container): self
     {
         $this->_container = $container;
 
