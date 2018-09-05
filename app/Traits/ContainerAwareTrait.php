@@ -20,7 +20,7 @@ trait ContainerAwareTrait
     private $_container;
 
     /**
-     * @return Interop\Container\ContainerInterface
+     * @return ContainerInterface
      */
     protected function getContainer(): ContainerInterface
     {
