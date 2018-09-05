@@ -37,7 +37,7 @@ abstract class AbstractMiddleware implements ContainerAwareInterface, Middleware
      *
      * @return Response
      */
-    public function __invoke(Request $request, Response $response, callable $next)
+    public function __invoke(Request $request, Response $response, callable $next): Response
     {
         return $this->handle($request, $response, $next);
     }
