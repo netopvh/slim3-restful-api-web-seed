@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use Illuminate\Database\Capsule\Manager;
 use Interop\Container\ContainerInterface;
 use Monolog\Logger;
 
@@ -17,14 +18,22 @@ use Monolog\Logger;
 trait ContainerAwareTrait
 {
     /** @var ContainerInterface */
-    private $_container;
+    private $container;
 
     /**
      * @return ContainerInterface
      */
     protected function getContainer(): ContainerInterface
     {
-        return $this->_container;
+        return $this->container;
+    }
+
+    /**
+     * @return Manager
+     */
+    public function getDb(): Manager
+    {
+        return $this->container->get('db');
     }
 
     /**
@@ -32,7 +41,7 @@ trait ContainerAwareTrait
      */
     protected function getLogger(): Logger
     {
-        return $this->_container->get('logger');
+        return $this->container->get('logger');
     }
 
     /**
@@ -42,7 +51,7 @@ trait ContainerAwareTrait
      */
     public function setContainer(ContainerInterface $container): self
     {
-        $this->_container = $container;
+        $this->container = $container;
 
         return $this;
     }
