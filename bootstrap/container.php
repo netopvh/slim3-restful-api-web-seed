@@ -1,5 +1,24 @@
 <?php
 
+// Auth
+// -----------------------------------------------------------------------------
+$container['auth'] = function ($container) {
+    $settings = $container->settings['jwt'];
+
+    $authProvider = new App\Providers\AuthProvider();
+    $claimsFactory = new Anddye\Auth\ClaimsFactory([
+        'exp' => $settings['expiry'],
+    ]);
+    $jwtProvider = new Anddye\Providers\FirebaseProvider([
+        'algorithm' => '',
+        'secret' => $settings['secret'],
+    ]);
+    $factory = new Anddye\Auth\Factory($claimsFactory, $jwtProvider);
+    $parser = new Anddye\Auth\Parser($jwtProvider);
+
+    return new Anddye\Auth\JwtAuth($authProvider, $factory, $parser);
+};
+
 // Database
 // -----------------------------------------------------------------------------
 $container['db'] = function ($container) {

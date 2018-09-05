@@ -35,8 +35,12 @@ $app = new Slim\App([
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
         ],
+        'jwt' => [
+            'expiry' => getenv('JWT_EXPIRY'),
+            'secret' => getenv('JWT_SECRET'),
+        ],
         'logger' => [
-            'name' => 'slim-app',
+            'name' => 'slimapp',
             'path' => __DIR__.'/../logs/app.log',
             'level' => Monolog\Logger::DEBUG,
         ],
