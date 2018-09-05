@@ -15,9 +15,7 @@ use App\Interfaces\PresenterInterface;
  */
 abstract class AbstractPresenter implements PresenterInterface
 {
-    /**
-     * @var object
-     */
+    /** @var object */
     private $_data;
 
     /**
@@ -31,7 +29,7 @@ abstract class AbstractPresenter implements PresenterInterface
     /**
      * @return array
      */
-    public function present()
+    public function present(): array
     {
         return $this->format($this->_data);
     }
