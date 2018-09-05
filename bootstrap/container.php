@@ -10,7 +10,7 @@ $container['auth'] = function ($container) {
         'exp' => $settings['expiry'],
     ]);
     $jwtProvider = new Anddye\Providers\FirebaseProvider([
-        'algorithm' => '',
+        'algorithm' => $settings['algorithm'],
         'secret' => $settings['secret'],
     ]);
     $factory = new Anddye\Auth\Factory($claimsFactory, $jwtProvider);

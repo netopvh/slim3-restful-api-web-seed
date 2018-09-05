@@ -36,6 +36,7 @@ $app = new Slim\App([
             'prefix' => '',
         ],
         'jwt' => [
+            'algorithm' => getenv('JWT_ALGORITHM'),
             'expiry' => getenv('JWT_EXPIRY'),
             'secret' => getenv('JWT_SECRET'),
         ],
