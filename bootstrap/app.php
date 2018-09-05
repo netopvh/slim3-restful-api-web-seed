@@ -3,14 +3,14 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 try {
-    $dotenv = new \Symfony\Component\Dotenv\Dotenv();
+    $dotenv = new Symfony\Component\Dotenv\Dotenv();
     $dotenv->load(__DIR__.'/../.env');
-} catch (\Symfony\Component\Dotenv\Exception\PathException $ex) {
+} catch (Symfony\Component\Dotenv\Exception\PathException $ex) {
     echo $ex->getMessage();
     exit(1);
 }
 
-$app = new \Slim\App([
+$app = new Slim\App([
     'settings' => [
         'displayErrorDetails' => 'dev' === getenv('APP_ENV'),
         'app' => [
@@ -38,7 +38,7 @@ $app = new \Slim\App([
         'logger' => [
             'name' => 'slim-app',
             'path' => __DIR__.'/../logs/app.log',
-            'level' => \Monolog\Logger::DEBUG,
+            'level' => Monolog\Logger::DEBUG,
         ],
     ],
-        ]);
+]);
