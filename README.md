@@ -81,7 +81,7 @@ class ArticlesController extends AbstractController
      *
      * @return Response
      */
-    public function getAction(Request $request, Response $response)
+    public function createView(Request $request, Response $response): Response
     {
         return $this->renderView($response, 'articles/create.html.twig');
     }
@@ -92,7 +92,7 @@ class ArticlesController extends AbstractController
      *
      * @return Response
      */
-    public function postAction(Request $request, Response $response)
+    public function postAction(Request $request, Response $response): Response
     {
         $article = new Article();
         $article->title = $request->getParam('input');
@@ -139,7 +139,7 @@ Don't forget to define your routes, passing the controller class name and method
 **routes/web.php**
 
 ```php
-$app->get('/articles', App\Controllers\ArticlesController::class.':getAction')->setName('articles.create');
+$app->get('/articles', App\Controllers\ArticlesController::class.':createView')->setName('articles.create');
 $app->post('/articles', App\Controllers\ArticlesController::class.':postAction')->setName('articles.create');
 ```
 
