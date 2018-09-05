@@ -17,7 +17,7 @@ use Phinx\Migration\AbstractMigration;
 class Migration extends AbstractMigration
 {
     /** @var Schema */
-    protected $schema;
+    private $schema;
 
     public function init()
     {

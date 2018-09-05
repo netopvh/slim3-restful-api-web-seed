@@ -16,7 +16,7 @@ use App\Interfaces\PresenterInterface;
 abstract class AbstractPresenter implements PresenterInterface
 {
     /** @var object */
-    protected $data;
+    private $data;
 
     /**
      * @param mixed $data
