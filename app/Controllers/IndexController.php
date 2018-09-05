@@ -22,7 +22,7 @@ class IndexController extends AbstractController
      *
      * @return Response
      */
-    public function indexView(Request $request, Response $response)
+    public function indexView(Request $request, Response $response): Response
     {
         return $this->renderView($response, 'index/index.html.twig', [
             'controllerName' => 'IndexController',
@@ -36,7 +36,7 @@ class IndexController extends AbstractController
      *
      * @return Response
      */
-    public function getAction(Request $request, Response $response)
+    public function getAction(Request $request, Response $response): Response
     {
         return $response->withJson([
             'controllerName' => 'IndexController',
