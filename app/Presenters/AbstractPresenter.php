@@ -16,14 +16,14 @@ use App\Interfaces\PresenterInterface;
 abstract class AbstractPresenter implements PresenterInterface
 {
     /** @var object */
-    private $_data;
+    protected $data;
 
     /**
      * @param mixed $data
      */
     public function __construct($data)
     {
-        $this->_data = (object) $data;
+        $this->data = (object) $data;
     }
 
     /**
@@ -31,6 +31,6 @@ abstract class AbstractPresenter implements PresenterInterface
      */
     public function present(): array
     {
-        return $this->format($this->_data);
+        return $this->format($this->data);
     }
 }
