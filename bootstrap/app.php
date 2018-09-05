@@ -42,3 +42,5 @@ $app = new Slim\App([
         ],
     ],
 ]);
+
+$container = $app->getContainer();

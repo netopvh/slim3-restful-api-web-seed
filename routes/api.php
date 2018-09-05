@@ -2,8 +2,6 @@
 
 use App\Controllers\IndexController;
 
-$container = $app->getContainer();
-
 // ###> Api ###
 $app->group('/api', function () {
     // ###> Index ###

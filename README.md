@@ -385,7 +385,6 @@ Commands are registered by using the `->add();` function chain in **bootstrap/co
 **config/commands.php**
 
 ```php
-$container = $app->getContainer();
 $console->add(new App\Commands\SayHelloCommand($container));
 ```
 

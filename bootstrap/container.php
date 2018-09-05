@@ -1,7 +1,5 @@
 <?php
 
-$container = $app->getContainer();
-
 // Database
 // -----------------------------------------------------------------------------
 $container['db'] = function ($container) {
