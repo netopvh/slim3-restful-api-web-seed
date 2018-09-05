@@ -17,11 +17,11 @@ use Phinx\Migration\AbstractMigration;
 class Migration extends AbstractMigration
 {
     /** @var Schema */
-    private $_schema;
+    protected $schema;
 
     public function init()
     {
-        $this->_schema = (new Capsule())->schema();
+        $this->schema = (new Capsule())->schema();
     }
 
     /**
@@ -29,6 +29,6 @@ class Migration extends AbstractMigration
      */
     public function schema()
     {
-        return $this->_schema;
+        return $this->schema;
     }
 }
