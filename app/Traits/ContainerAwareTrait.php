@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use Anddye\Auth\JwtAuth;
 use Illuminate\Database\Capsule\Manager;
 use Interop\Container\ContainerInterface;
 use Monolog\Logger;
@@ -19,6 +20,14 @@ trait ContainerAwareTrait
 {
     /** @var ContainerInterface */
     private $container;
+
+    /**
+     * @return JwtAuth
+     */
+    protected function getAuth(): JwtAuth
+    {
+        return $this->container->get('auth');
+    }
 
     /**
      * @return ContainerInterface
