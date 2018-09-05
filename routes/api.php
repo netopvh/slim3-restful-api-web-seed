@@ -7,7 +7,7 @@ use App\Controllers\IndexController;
 $app->group('/api', function () {
     // ###> Auth ###
     $this->group('/auth', function () {
-        $this->get('/login', AuthController::class.':postAction');
+        $this->post('/login', AuthController::class.':postAction');
     });
     // ###< Auth ###
 
