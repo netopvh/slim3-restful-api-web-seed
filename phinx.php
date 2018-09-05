@@ -2,9 +2,7 @@
 
 require_once __DIR__.'/bootstrap/app.php';
 
-$container = $app->getContainer();
-
-$db = $container->get('settings')['db'];
+$db = $app->getContainer()->settings['db'];
 
 return [
     'paths' => [
