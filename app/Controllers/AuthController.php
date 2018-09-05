@@ -24,8 +24,8 @@ class AuthController extends AbstractController
      */
     public function postAction(Request $request, Response $response): Response
     {
-        $username = $request->getParam('username');
-        $password = $request->getParam('password');
+        $username = $request->getParam('username', '');
+        $password = $request->getParam('password', '');
 
         if (!$token = $this->getAuth()->attempt($username, $password)) {
             return $response->withStatus(401);
