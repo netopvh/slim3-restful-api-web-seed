@@ -24,6 +24,8 @@ abstract class AbstractCommand extends Command implements CommandInterface, Cont
     use ContainerAwareTrait;
 
     /**
+     * AbstractCommand constructor.
+     *
      * @param ContainerInterface $container
      */
     public function __construct(ContainerInterface $container)
@@ -33,6 +35,9 @@ abstract class AbstractCommand extends Command implements CommandInterface, Cont
         $this->setContainer($container);
     }
 
+    /**
+     * Configures the current command.
+     */
     protected function configure()
     {
         $this->setName($this->name());
@@ -51,11 +56,15 @@ abstract class AbstractCommand extends Command implements CommandInterface, Cont
     }
 
     /**
+     * Executes the current command.
+     *
      * @param InputInterface  $input
      * @param OutputInterface $output
+     *
+     * @return mixed
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->handle($input, $output);
+        return $this->handle($input, $output);
     }
 }
