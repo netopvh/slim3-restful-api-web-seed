@@ -17,7 +17,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 interface CommandInterface
 {
     /**
-     * Sets an array of argument to add.
+     * Sets an array of argument to add to the command.
      *
      * @return array
      */
@@ -55,7 +55,7 @@ interface CommandInterface
     public function name(): string;
 
     /**
-     * Sets an array of options to add.
+     * Sets an array of options to add to the command.
      *
      * @return array
      */
