@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Interfaces\ContainerAwareInterface;
 use App\Traits\ContainerAwareTrait;
 use Interop\Container\ContainerInterface;
-use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class AbstractController.
@@ -21,6 +21,8 @@ abstract class AbstractController implements ContainerAwareInterface
     use ContainerAwareTrait;
 
     /**
+     * AbstractController constructor.
+     *
      * @param ContainerInterface $container
      */
     public function __construct(ContainerInterface $container)
@@ -29,25 +31,30 @@ abstract class AbstractController implements ContainerAwareInterface
     }
 
     /**
-     * @param string $path
-     * @param array  $data   optional
-     * @param array  $params optional
+     * Build the path for a named route including the base path.
+     *
+     *
+     * @param string $name        Route name
+     * @param array  $data        Optional named argument replacement data
+     * @param array  $queryParams Optional query string parameters
      *
      * @return string
      */
-    public function getPathFor(string $path, array $data = [], array $params = [])
+    public function getPathFor(string $name, array $data = [], array $queryParams = []): string
     {
-        return $this->getContainer()->get('router')->pathFor($path, $data, $params);
+        return $this->getContainer()->get('router')->pathFor($name, $data, $queryParams);
     }
 
     /**
-     * @param Response $response
-     * @param string   $template
-     * @param array    $data     optional
+     * Output rendered template.
      *
-     * @return Response
+     * @param ResponseInterface $response
+     * @param string            $template Template pathname relative to templates directory
+     * @param array             $data     Optional associative array of template variables
+     *
+     * @return ResponseInterface
      */
-    public function renderView(Response $response, string $template, array $data = [])
+    public function renderView(ResponseInterface $response, string $template, array $data = []): ResponseInterface
     {
         return $this->getContainer()->get('view')->render($response, $template, $data);
     }
