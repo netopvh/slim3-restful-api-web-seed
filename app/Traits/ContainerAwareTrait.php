@@ -21,6 +21,8 @@ trait ContainerAwareTrait
     private $container;
 
     /**
+     * Get the application dependency container instance.
+     * 
      * @return ContainerInterface
      */
     protected function getContainer(): ContainerInterface
@@ -48,9 +50,9 @@ trait ContainerAwareTrait
         return $this->container->get('logger');
     }
     
-    // You can fetch services from your container explicitly or implicitly. You can fetch an explicit reference to the container instance from inside a Slim application route like this:
-
     /**
+     * Set the application dependency container instance.
+     * 
      * @param ContainerInterface $container
      *
      * @return $this
