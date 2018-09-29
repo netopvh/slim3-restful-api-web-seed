@@ -27,8 +27,10 @@ trait ContainerAwareTrait
     {
         return $this->container;
     }
-
+    
     /**
+     * Explicitly fetches the database manager service from the container.
+     * 
      * @return Manager
      */
     public function getDb(): Manager
@@ -37,12 +39,16 @@ trait ContainerAwareTrait
     }
 
     /**
+     * Explicitly fetches the logger service from the container.
+     * 
      * @return Logger
      */
     protected function getLogger(): Logger
     {
         return $this->container->get('logger');
     }
+    
+    // You can fetch services from your container explicitly or implicitly. You can fetch an explicit reference to the container instance from inside a Slim application route like this:
 
     /**
      * @param ContainerInterface $container
