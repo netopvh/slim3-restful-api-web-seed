@@ -32,7 +32,7 @@ interface CommandInterface
 
     /**
      * The body of the command.
-     * 
+     *
      * @param InputInterface  $input
      * @param OutputInterface $output
      *

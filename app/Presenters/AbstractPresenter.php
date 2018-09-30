@@ -20,7 +20,7 @@ abstract class AbstractPresenter implements PresenterInterface
 
     /**
      * AbstractPresenter constructor.
-     * 
+     *
      * @param mixed $data
      */
     public function __construct($data)
@@ -30,7 +30,7 @@ abstract class AbstractPresenter implements PresenterInterface
 
     /**
      * Formats the data in an array for use in the view.
-     * 
+     *
      * @return array
      */
     public function present(): array

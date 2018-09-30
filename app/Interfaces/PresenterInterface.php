@@ -16,7 +16,7 @@ interface PresenterInterface
     /**
      * Format the data into an normalised array, without having to modify the
      * original source.
-     * 
+     *
      * @param object $data
      *
      * @return array

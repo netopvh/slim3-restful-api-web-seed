@@ -4,6 +4,7 @@ namespace App\Migrations;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Phinx\Migration\AbstractMigration;
+use Illuminate\Database\Schema\MySqlBuilder as Schema;
 
 /**
  * Class Migration.
@@ -19,15 +20,20 @@ class Migration extends AbstractMigration
     /** @var Schema */
     private $schema;
 
+    /**
+     * Create a schema builder instance.
+     */
     public function init()
     {
         $this->schema = (new Capsule())->schema();
     }
 
     /**
+     * Get the schema builder instance.
+     *
      * @return Schema
      */
-    public function schema()
+    public function schema(): Schema
     {
         return $this->schema;
     }

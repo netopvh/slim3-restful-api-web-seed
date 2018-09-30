@@ -17,7 +17,7 @@ interface ContainerAwareInterface
 {
     /**
      * Set the application dependency container instance.
-     * 
+     *
      * @param ContainerInterface $container
      */
     public function setContainer(ContainerInterface $container);

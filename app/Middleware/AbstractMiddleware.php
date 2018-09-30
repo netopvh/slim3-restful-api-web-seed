@@ -24,7 +24,7 @@ abstract class AbstractMiddleware implements ContainerAwareInterface, Middleware
 
     /**
      * AbstractMiddleware constructor.
-     * 
+     *
      * @param ContainerInterface $container
      */
     public function __construct(ContainerInterface $container)
@@ -33,9 +33,9 @@ abstract class AbstractMiddleware implements ContainerAwareInterface, Middleware
     }
 
     /**
-     * Invokable class that executes the handle method to manipulate the 
+     * Invokable class that executes the handle method to manipulate the
      * Request and Response objects.
-     * 
+     *
      * @param Request  $request
      * @param Response $response
      * @param callable $next
