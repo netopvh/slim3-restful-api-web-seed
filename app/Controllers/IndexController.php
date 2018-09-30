@@ -7,12 +7,6 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 /**
  * Class IndexController.
- *
- * @author Andrew Dyer <andrewdyer@outlook.com>
- *
- * @category Controller
- *
- * @see https://github.com/andrewdyer/slim3-restful-api-web-seed
  */
 class IndexController extends AbstractController
 {
